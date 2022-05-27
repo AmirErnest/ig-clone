@@ -1,7 +1,9 @@
 import React from 'react'
-import { SafeAreaView, StyleSheet } from 'react-native'
+import { SafeAreaView, StyleSheet, ScrollView } from 'react-native'
 import Header from '../components/home/Header';
+import Post from '../components/home/Post';
 import Stories from '../components/home/Stories';
+import { PPOSTS } from '../data/posts';
 
 
 const HomeScreen = () => {
@@ -9,6 +11,11 @@ const HomeScreen = () => {
     <SafeAreaView style={styles.container}>
       <Header/>
       <Stories/>
+      <ScrollView>
+        {PPOSTS.map((post, index) => (
+          <Post post={post} key={index} />
+        ))}
+      </ScrollView>
     </SafeAreaView>
   );
 }
