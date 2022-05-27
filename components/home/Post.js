@@ -104,7 +104,7 @@ const Caption = ({post}) => (
   </View>
 )
 
-const styles = StyleSheet.create({
+const styles = StyleSheet.create({ 
   story: {
     width: 35,
     height: 35,
