@@ -32,6 +32,8 @@ const Post = ({post}) => {
         <PostFooter />
         <Likes post={post}/>
         <Caption post={post} />
+        <CommentsSection post={post} />
+        <Comments post={post} />
       </View>
     </View>
   )
@@ -102,6 +104,31 @@ const Caption = ({post}) => (
       <Text> {post.caption}</Text>
     </Text>
   </View>
+)
+
+//double !! turn the line into true or false.
+const CommentsSection = ({post}) => (
+  <View style={{ margin: 5 }}>
+    {!!post.comments.length && (
+      <Text style={{ color: 'gray' }}>
+        View {post.comments.length > 1 ? 'all' : ''} {post.comments.length} {' '}
+        {post.comments.length > 1 ? 'Comments' : 'Comment'}
+      </Text>
+    )}
+  </View>
+)
+
+const Comments =({post}) => (
+  <>
+  {post.comments.map((comment, index) => (
+    <View key={index} style={{ flexDirection: 'row', marginTop: 5}}>
+      <Text style={{ color: 'white' }}>
+        <Text style={{ fontWeight: '700' }}>{comment.user}</Text> {' '}
+        {comment.comment}
+      </Text>
+    </View>
+  ))}
+  </>
 )
 
 const styles = StyleSheet.create({ 

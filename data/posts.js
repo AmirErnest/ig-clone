@@ -34,6 +34,10 @@ export const PPOSTS = [
         user: 'ChinaTour',
         comment: 'great shot'
       },
+      {
+        user: 'Lio',
+        comment: 'which camera lense did you use??!!'
+      },
     ],
   },
 ]
